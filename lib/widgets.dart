@@ -24,7 +24,7 @@ class TaskCardWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            title ?? "(Sin Tareas)",
+            title ?? "(No hay tarea)",
             style: TextStyle(
               color: Color(0xFF211551),
               fontSize: 22.0,
@@ -36,7 +36,7 @@ class TaskCardWidget extends StatelessWidget {
               top: 10.0,
             ),
             child: Text(
-              desc ?? "(Sin descripcion)",
+              desc ?? "(Sin descripción)",
               style: TextStyle(
                 fontSize: 16.0,
                 color: Color(0xFF86829D),
@@ -81,12 +81,14 @@ class TodoWidget extends StatelessWidget {
               image: AssetImage('assets/images/check_icon.png'),
             ),
           ),
-          Text(
-            text ?? '(Widget Here)',
-            style: TextStyle(
-              color: isDone ? Color(0xFF211551) : Color(0xFF86829D),
-              fontSize: 16.0,
-              fontWeight: isDone ? FontWeight.bold : FontWeight.w500,
+          Flexible(
+            child: Text(
+              text ?? '(Sin tarea)',
+              style: TextStyle(
+                color: isDone ? Color(0xFF211551) : Color(0xFF86829D),
+                fontSize: 16.0,
+                fontWeight: isDone ? FontWeight.bold : FontWeight.w500,
+              ),
             ),
           ),
         ],
